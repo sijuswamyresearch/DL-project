@@ -1,0 +1,64 @@
+# Literature Review on Medical Image Denoising Algorithms
+
+## Introduction
+
+This chapter presents a review of the significant paper "A review on medical image denoising algorithms" by @Sagheer2020, which provides a thorough exploration of medical image denoising techniques. The authors underscore the increasing importance of medical image processing as a diagnostic tool, fueled by rapid advancements in computing and wireless technology. These images are essential for examining various internal structures; however, they are frequently compromised by random and frequency-dependent noise introduced during acquisition or processing. Consequently, this noise degrades image clarity and impedes accurate disease identification, making denoising a crucial pre-processing step.
+
+## Significance and Context
+
+The paper situates itself within a vital area of medical image processing, acknowledging the field's rapid expansion due to technological progress \[@Sagheer2020]. The authors emphasize the significance of medical images in diagnostics and the necessity of removing noise to enable precise interpretation. Therefore, denoising becomes a compulsory step to overcome inherent noise and artifacts in medical imaging.
+
+## Depth of Coverage
+
+The study delves into various medical imaging modalities, each with distinct challenges:
+
+*   **Ultrasound (US) Images:** The paper analyzes both 2D and 3D US imaging, recognizing speckle noise as a primary concern \[@Sagheer2020]. It elaborates on the physics of US image creation and the inherent noise characteristics. The authors also explain how speckle noise arises from the scattering of ultrasound waves through tissue, making accurate diagnoses more difficult \[@Tao2006; @Weng1991; @Milkowski2009]. Moreover, they note its multiplicative nature.
+*   **Magnetic Resonance (MR) Images:**  It addresses Rician noise distribution within MR images, detailing how it varies with the signal-to-noise ratio (SNR) \[@Henkelman1986; @Gudbjartsson1995; @Aja2008]. The basics of MR image acquisition are also described.
+*   **Computed Tomography (CT) Images:** This section focuses on the challenges posed by additive Gaussian noise in CT images, with a specific emphasis on Low Dose CT (LDCT) \[@Ding2018]. The mechanism behind CT image formation using X-rays is also briefly covered.
+*   **Positron Emission Tomography (PET) Images:** The discussion centers around the mixed Gaussian-Poisson model, which accurately represents the noise present in PET images \[@Slifstein2001; @Rodrigues2008; @Hannequin2002; @Mansoor2014; @Seret2009].
+
+The authors further analyze various denoising techniques, categorizing them as:
+
+*   **Spatial Domain Filters:** This category includes methods like mean, median, and adaptive filters (e.g., Lee, Frost, and Kuan filters) \[@Lee1980; @Frost1982; @Kuan1985], bilateral filters \[@Tomasi1998; @Abd2002], and diffusion-based filters such as SRAD, DPAD, and OSRAD \[@Yu2002; @Mittal2010; @Krissian2007; @Zixuan2017].
+*   **Transform Domain Filters:** This group encompasses wavelet thresholding \[@Bhuiyan2009; @Donoho2006], sub-band coefficient mixing \[@Coup2008], principal component analysis (PCA) \[@Lee1992], and contourlet transforms \[@Do2005].
+*   **Hybrid Filters:** These are methods that combine aspects of both spatial and transform domain techniques, for example, Optimized Bayesian Non-Local Means (OBNLM) \[@Coupe2009; @Gupta2019; @Adabi2019], the fast bilateral filter \[@Zhang2015], and guided bilateral filters \[@Zhang2016].
+*   **Low-Rank Techniques:** The paper includes methods such as weighted nuclear norm minimization \[@Gu2016], and low-rank tensor approximation \[@Peng2014; @Dong2015].
+*   **Sinogram-based Techniques:**  Here, methods like weighted least squares \[@Chen2017], stationary wavelet transform \[@Borsdorf2008], and sinogram smoothing \[@Diwakar2016] are discussed.
+*   **Iterative Reconstruction Techniques:**  The review includes compressed sensing \[@Yu2009; @Cao2016] and feature-constrained reconstruction (FCR) \[@Liu2018].
+*  **Post-Processing Techniques**: Methods based on Neural networks \[@Chen2017; @Ahn2019; @Humphries2019; @Chen2019; @Kim2019].
+
+For each of the above approaches, the authors provide descriptions of their underlying principles, along with their specific advantages and limitations. The paper also stresses the importance of preprocessing through medical image denoising, which is an essential initial step in preserving vital information. Additionally, the authors define criteria for evaluating effective denoising algorithms, including edge preservation, maintaining structural similarity, low computational complexity, and non-essentialness of prior databases. Furthermore, performance metrics such as PSNR, EPI, SSIM, FSIM, sharpness index, and entropy were defined and used to assess denoising performance on simulated and real images.
+
+## Gaps Identified
+
+The study identifies several shortcomings in existing denoising methods, suggesting avenues for future research:
+
+*   **Lack of a Unified Strategy:**  The study notes that no single denoising technique is universally suitable across all medical imaging modalities due to their varying noise characteristics \[@Sagheer2020].
+*   **Limitations of Spatial Domain Techniques:** Traditional spatial domain filters are found to blur edges and reduce image contrast, making them less suitable for medical images where edges are highly important \[@Mittal2010; @Yu2002; @Lee1980; @Frost1982; @Tomasi1998; @Abd2002; @Krissian2007].
+*  **Computational Costs:** Some advanced techniques such as Non-local means and other advanced methods show a high computational overhead, making them less suitable for real time systems \[@Coupe2009; @Dolui2013; @Manjon2008; @Guo2011].
+*   **Parameter Dependence in Thresholding**: Wavelet based methods needs manual tuning of parameters which is difficult for non expert user \[@Bhuiyan2009; @Donoho2006].
+*   **Data Dependency**:  Dictionary based and deep learning based methods needs well formatted training data to perform efficiently, which often proves to be difficult due to ethical issues \[@Chen2017; @Ahn2019; @Humphries2019; @Chen2019; @Kim2019; @Liu2017].
+*   **Lack of Reference Metrics**:  Evaluation metrics for real images that do not require reference images are insufficient for assessing the overall denoising quality \[@Leclaire2015; @Blanchet2012; @Wang2004; @Zhang2011].
+*   **Need for Improved Low Dose CT Methods**: Low dose CT images require further research in terms of noise reduction techniques \[@Zhao2019].
+*   **Low Rank Exploration:**  Further exploration in the low rank methods for CT denoising is required \[@Sagheer2019].
+*  **Deep Learning in PET**: The potential of deep learning for PET imaging requires further examination \[@Wollenweber2019].
+
+## Major Contributions
+
+The study contributes to the field by offering:
+
+*   **Comprehensive Analysis:** A detailed and comparative study of denoising methods with both quantitative and qualitative assessment is provided \[@Sagheer2020].
+*   **Practical Insights:**  The authors link the effectiveness of the algorithms with the practical needs of medical imaging, such as low computational costs and real time analysis. They also discuss the ethical issues associated with the availability of medical images.
+*   **Future Research Guidance:** By identifying gaps, the study directs researchers towards promising avenues in medical image processing.
+*   **Categorization of CT techniques**: The paper has clearly categorized the denoising techniques used for CT, which is an important contribution to the CT denoising literature.
+
+## Promises
+
+The study points to the directions for future research by:
+
+*   **Highlighting the Need for Modality-Specific Algorithms:**  Advocating for the design of denoising algorithms that are tailored to the specific characteristics of different medical imaging modalities.
+*  **Emphasizing Low Computational Complexity:** Calling for exploration of techniques with lower computational requirements that are useful in real time scenarios.
+*   **Exploring Low-Rank and Tensor Approaches:** Indicating further research in low rank and tensor approaches.
+*   **Research into Deep Learning Methods for PET**: Suggesting research for machine learning methods for PET imaging.
+
+

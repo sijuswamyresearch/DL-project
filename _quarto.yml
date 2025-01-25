@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "Automated Medical Image Denoiser (AMID)"
+  subtitle: "-A Novel Deep Learning Model for Integrated Medical Image Denoising" 
+  author: "Siju K S"
+  date: "26/1/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - Literature_review.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
